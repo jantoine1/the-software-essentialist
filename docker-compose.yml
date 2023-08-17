@@ -1,0 +1,47 @@
+#
+# Client: Antoine Solutions
+# Project: The Essentialist
+#
+
+networks:
+  default:
+  reverse-proxy_default:
+    external: true
+
+services:
+  node:
+    command: bash
+    depends_on:
+      - mailcatcher
+    environment:
+      # node
+      - NODE_ENV
+      - NODE_PORT
+      # jwilder/nginx_proxy
+      - VIRTUAL_HOST=${COMPOSE_PROJECT_NAME}.${DOMAIN}
+      - VIRTUAL_PORT=${NODE_PORT}
+    hostname: node.${COMPOSE_PROJECT_NAME}
+    expose:
+      - ${NODE_PORT}
+    image: node:latest
+    networks:
+      - default
+      - reverse-proxy_default
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+    user: node
+    volumes:
+      - ./:/home/node/app
+    working_dir: /home/node/app
+
+  mailcatcher:
+    environment:
+      # jwilder/nginx_proxy
+      VIRTUAL_HOST: mailcatcher-${NODE_HOST}
+      VIRTUAL_PORT: 1080
+    hostname: mailcatcher-${COMPOSE_PROJECT_NAME}
+    image: schickling/mailcatcher
+    networks:
+      - default
+    restart: unless-stopped
