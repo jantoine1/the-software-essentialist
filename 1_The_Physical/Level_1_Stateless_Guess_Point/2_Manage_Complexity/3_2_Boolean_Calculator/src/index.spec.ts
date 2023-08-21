@@ -8,9 +8,11 @@ describe('boolean calculator', () => {
       expect(result).toBeTruthy();
     });
 
-  //   it('knows FALSE is false', () => {
-
-  //   });
+    it('knows FALSE is false', () => {
+      const booleanCalculator = new BooleanCalculator();
+      const result = booleanCalculator.calculate('FALSE');
+      expect(result).toBeFalsy();
+    });
   });
 
   // describe('knows the NOT operator', () => {
