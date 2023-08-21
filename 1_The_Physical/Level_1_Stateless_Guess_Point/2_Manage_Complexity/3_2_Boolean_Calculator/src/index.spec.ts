@@ -31,10 +31,11 @@ describe('boolean calculator', () => {
     });
   });
 
-  // describe('knows the AND operator', () => {
-  //   it('knows TRUE AND TRUE is true', () => {
-
-  //   });
+  describe('knows the AND operator', () => {
+    it('knows TRUE AND TRUE is true', () => {
+      const result = booleanCalculator.calculate('TRUE AND TRUE');
+      expect(result).toBeTruthy();
+    });
 
   //   it('knows TRUE AND FALSE is false', () => {
 
@@ -47,7 +48,7 @@ describe('boolean calculator', () => {
   //   it('knows FALSE AND FALSE is false', () => {
 
   //   });
-  // });
+  });
 
   // describe('knows the OR operator', () => {
   //   it('knows TRUE OR TRUE is true', () => {
