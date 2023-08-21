@@ -15,15 +15,17 @@ describe('boolean calculator', () => {
     });
   });
 
-  // describe('knows the NOT operator', () => {
-  //   it('knows NOT TRUE is false', () => {
-
-  //   });
+  describe('knows the NOT operator', () => {
+    it('knows NOT TRUE is false', () => {
+      const booleanCalculator = new BooleanCalculator();
+      const result = booleanCalculator.calculate('NOT TRUE');
+      expect(result).toBeFalsy();
+    });
 
   //   it('knows NOT FALSE is true', () => {
 
   //   });
-  // });
+  });
 
   // describe('knows the AND operator', () => {
   //   it('knows TRUE AND TRUE is true', () => {

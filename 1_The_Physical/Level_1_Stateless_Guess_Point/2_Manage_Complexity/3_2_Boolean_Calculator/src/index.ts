@@ -1,6 +1,8 @@
 export class BooleanCalculator {
   calculate(str: string): boolean {
-    if (str === 'FALSE') {
+    const strArray = str.split(/\s/);
+
+    if (str === 'FALSE' || str === 'NOT TRUE') {
       return false;
     }
 
