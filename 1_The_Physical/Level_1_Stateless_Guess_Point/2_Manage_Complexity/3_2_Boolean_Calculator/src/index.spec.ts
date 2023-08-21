@@ -25,9 +25,10 @@ describe('boolean calculator', () => {
       expect(result).toBeFalsy();
     });
 
-  //   it('knows NOT FALSE is true', () => {
-
-  //   });
+    it('knows NOT FALSE is true', () => {
+      const result = booleanCalculator.calculate('NOT FALSE');
+      expect(result).toBeTruthy();
+    });
   });
 
   // describe('knows the AND operator', () => {
