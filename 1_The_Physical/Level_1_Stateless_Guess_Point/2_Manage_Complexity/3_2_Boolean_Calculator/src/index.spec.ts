@@ -1,15 +1,19 @@
 import { BooleanCalculator } from "./index";
 
+let booleanCalculator: BooleanCalculator;
+
 describe('boolean calculator', () => {
+  beforeEach(() => {
+    booleanCalculator = new BooleanCalculator();
+  });
+
   describe('knows boolean values', () => {
     it('knows TRUE is true', () => {
-      const booleanCalculator = new BooleanCalculator();
       const result = booleanCalculator.calculate('TRUE');
       expect(result).toBeTruthy();
     });
 
     it('knows FALSE is false', () => {
-      const booleanCalculator = new BooleanCalculator();
       const result = booleanCalculator.calculate('FALSE');
       expect(result).toBeFalsy();
     });
@@ -17,7 +21,6 @@ describe('boolean calculator', () => {
 
   describe('knows the NOT operator', () => {
     it('knows NOT TRUE is false', () => {
-      const booleanCalculator = new BooleanCalculator();
       const result = booleanCalculator.calculate('NOT TRUE');
       expect(result).toBeFalsy();
     });
