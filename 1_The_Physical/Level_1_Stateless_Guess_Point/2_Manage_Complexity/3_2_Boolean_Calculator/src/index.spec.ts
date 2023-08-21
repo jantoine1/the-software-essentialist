@@ -1,13 +1,17 @@
-describe('boolean calculator', () => {
-  // describe('knows boolean values', () => {
-  //   it('knows TRUE is true', () => {
+import { BooleanCalculator } from "./index";
 
-  //   });
+describe('boolean calculator', () => {
+  describe('knows boolean values', () => {
+    it('knows TRUE is true', () => {
+      const booleanCalculator = new BooleanCalculator();
+      const result = booleanCalculator.calculate('TRUE');
+      expect(result).toBeTruthy();
+    });
 
   //   it('knows FALSE is false', () => {
 
   //   });
-  // });
+  });
 
   // describe('knows the NOT operator', () => {
   //   it('knows NOT TRUE is false', () => {
