@@ -1,12 +1,21 @@
-describe('boolean calculator', () => {
-  // describe('knows boolean values', () => {
-  //   it.each([
-  //     ['TRUE', true],
-  //     ['FALSE', false],
-  //   ])('knows %s is %o', (str: string, expected: boolean) => {
+import { BooleanCalculator } from "./index";
 
-  //   });
-  // });
+let booleanCalculator: BooleanCalculator;
+
+describe('boolean calculator', () => {
+  beforeEach(() => {
+    booleanCalculator = new BooleanCalculator();
+  })
+
+  describe('knows boolean values', () => {
+    it.each([
+      ['TRUE', true],
+      // ['FALSE', false],
+    ])('knows %s is %o', (str: string, expected: boolean) => {
+      const result = booleanCalculator.calculate(str);
+      expect(result).toBe(expected);
+    });
+  });
 
   // describe('knows parenthesis', () => {
   //   it.each([
