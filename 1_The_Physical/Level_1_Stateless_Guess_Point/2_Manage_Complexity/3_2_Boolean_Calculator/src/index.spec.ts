@@ -140,7 +140,7 @@ describe('boolean calculator', () => {
     it.each([
       ['(TRUE OR TRUE)', true],
       ['(TRUE) OR FALSE', true],
-      // ['FALSE OR (TRUE)', true],
+      ['FALSE OR (TRUE)', true],
       // ['(TRUE OR TRUE OR TRUE)', true],
       // ['(TRUE OR TRUE) OR FALSE', true],
       // ['TRUE OR (FALSE OR FALSE)', true],
