@@ -78,7 +78,7 @@ describe('boolean calculator', () => {
       ['(TRUE AND TRUE)', true],
       ['(TRUE) AND FALSE', false],
       ['FALSE AND (TRUE)', false],
-      // ['(TRUE AND TRUE AND TRUE)', true],
+      ['(TRUE AND TRUE AND TRUE)', true],
       // ['(TRUE AND TRUE) AND FALSE', false],
       // ['TRUE AND (FALSE AND FALSE)', false],
       // ['FALSE AND (FALSE) AND FALSE', false],
