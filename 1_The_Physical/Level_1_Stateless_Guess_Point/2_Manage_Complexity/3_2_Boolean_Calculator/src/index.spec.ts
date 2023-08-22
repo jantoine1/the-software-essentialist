@@ -44,7 +44,7 @@ describe('boolean calculator', () => {
       // ['NOT (TRUE)', false],
       // ['NOT (FALSE)', true],
       ['(NOT TRUE)', false],
-      // ['(NOT FALSE)', true],
+      ['(NOT FALSE)', true],
       // ['(NOT (TRUE))', false],
       // ['(NOT (FALSE))', true],
     ])('knows %s is %o', (str: string, expected: boolean) => {
