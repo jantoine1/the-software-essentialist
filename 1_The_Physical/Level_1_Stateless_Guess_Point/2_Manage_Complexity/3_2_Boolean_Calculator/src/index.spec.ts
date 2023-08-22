@@ -10,7 +10,7 @@ describe('boolean calculator', () => {
   describe('knows boolean values', () => {
     it.each([
       ['TRUE', true],
-      // ['FALSE', false],
+      ['FALSE', false],
     ])('knows %s is %o', (str: string, expected: boolean) => {
       const result = booleanCalculator.calculate(str);
       expect(result).toBe(expected);
