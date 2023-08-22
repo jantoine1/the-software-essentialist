@@ -91,7 +91,7 @@ describe('boolean calculator', () => {
   describe('knows how to combine the NOT and AND operators', () => {
     it.each([
       ['NOT TRUE AND TRUE', false],
-      // ['TRUE AND NOT FALSE', true],
+      ['TRUE AND NOT FALSE', true],
       // ['NOT TRUE AND NOT FALSE', false],
       // ['NOT TRUE AND TRUE AND TRUE', false],
       // ['TRUE AND NOT FALSE AND TRUE', true],
