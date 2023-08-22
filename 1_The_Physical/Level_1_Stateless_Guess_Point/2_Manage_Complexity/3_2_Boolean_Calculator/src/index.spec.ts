@@ -21,7 +21,7 @@ describe('boolean calculator', () => {
     it.each([
       ['(TRUE)', true],
       ['(FALSE)', false],
-      // ['((TRUE))', true],
+      ['((TRUE))', true],
       ['((FALSE))', false],
     ])('knows that %s is %o', (str: string, expected: boolean) => {
       const result = booleanCalculator.calculate(str);
