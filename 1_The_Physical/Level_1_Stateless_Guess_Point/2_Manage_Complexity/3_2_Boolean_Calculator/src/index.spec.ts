@@ -37,9 +37,10 @@ describe('boolean calculator', () => {
       expect(result).toBeTruthy();
     });
 
-  //   it('knows TRUE AND FALSE is false', () => {
-
-  //   });
+    it('knows TRUE AND FALSE is false', () => {
+      const result = booleanCalculator.calculate('TRUE AND FALSE');
+      expect(result).toBeFalsy();
+    });
 
   //   it('knows FALSE AND TRUE is false', () => {
 
