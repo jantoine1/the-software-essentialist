@@ -5,21 +5,46 @@ export class BooleanCalculator {
 
   calculateParts(parts: string[]): boolean {
     let result: boolean = true;
-    let part: string;
+    let inverse: boolean = false;
+    let operator: string = 'AND';
+    let value: boolean = true;
 
+    let part: string;
     while (parts.length) {
       part = parts.shift() as string;
 
       if (part === 'NOT') {
-        result = result && !this.calculateParts(parts)
+        inverse = !inverse;
+        continue;
+      }
+
+      if (part === 'AND') {
+        continue;
+      }
+      else if (part === 'OR') {
+        operator = 'OR';
+        continue;
       }
 
       if (part === 'FALSE') {
-        result = result && false;
+        value = false;
       }
-      else if (part === 'TRUE') {
-        result = result && true;
+
+      if (inverse) {
+        value = !value;
       }
+
+      if (operator === 'AND') {
+        result = result && value;
+      }
+      else {
+        result = result || value;
+      }
+
+      // Reset defaults.
+      inverse = false;
+      operator = 'AND';
+      value = true;
     }
 
     return result;
