@@ -106,7 +106,7 @@ describe('boolean calculator', () => {
     it.each([
       ['(NOT TRUE AND TRUE)', false],
       ['(TRUE) AND NOT FALSE', true],
-      // ['NOT TRUE AND (NOT FALSE)', false],
+      ['NOT TRUE AND (NOT FALSE)', false],
       // ['(NOT TRUE AND TRUE AND TRUE)', false],
       // ['(TRUE AND NOT FALSE) AND TRUE', true],
       // ['FALSE AND (TRUE AND NOT FALSE)', false],
