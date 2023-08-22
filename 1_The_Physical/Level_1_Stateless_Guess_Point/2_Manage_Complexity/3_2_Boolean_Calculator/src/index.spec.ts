@@ -17,16 +17,17 @@ describe('boolean calculator', () => {
     });
   });
 
-  // describe('knows parenthesis', () => {
-  //   it.each([
-  //     ['(TRUE)', true],
-  //     ['(FALSE)', false],
-  //     ['((TRUE))', true],
-  //     ['((FALSE))', false],
-  //   ])('knows that %s is %o', (str: string, expected: boolean) => {
-
-  //   });
-  // });
+  describe('knows parenthesis', () => {
+    it.each([
+      // ['(TRUE)', true],
+      ['(FALSE)', false],
+      // ['((TRUE))', true],
+      // ['((FALSE))', false],
+    ])('knows that %s is %o', (str: string, expected: boolean) => {
+      const result = booleanCalculator.calculate(str);
+      expect(result).toBe(expected);
+    });
+  });
 
   // describe('knows the NOT operator', () => {
   //   it.each([
