@@ -196,7 +196,7 @@ describe('boolean calculator', () => {
       ['TRUE AND (TRUE OR FALSE)', true],
       ['(TRUE OR TRUE) AND FALSE', false],
       ['TRUE AND (TRUE OR NOT TRUE)', true],
-      // ['(NOT FALSE OR TRUE) AND FALSE', false],
+      ['(NOT FALSE OR TRUE) AND FALSE', false],
     ])('knows that %s is %o', (str: string, expected: boolean) => {
       const result = booleanCalculator.calculate(str);
       expect(result).toBe(expected);
