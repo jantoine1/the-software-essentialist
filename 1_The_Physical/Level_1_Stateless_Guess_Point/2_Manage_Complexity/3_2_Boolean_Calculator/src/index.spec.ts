@@ -118,7 +118,7 @@ describe('boolean calculator', () => {
 
   describe('knows the OR operator', () => {
     it.each([
-      // ['TRUE OR TRUE', true],
+      ['TRUE OR TRUE', true],
       // ['TRUE OR FALSE', true],
       // ['FALSE OR TRUE', true],
       ['FALSE OR FALSE', false],
