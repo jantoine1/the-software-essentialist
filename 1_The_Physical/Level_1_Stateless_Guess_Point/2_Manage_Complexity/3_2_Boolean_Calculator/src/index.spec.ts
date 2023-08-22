@@ -64,7 +64,7 @@ describe('boolean calculator', () => {
       ['TRUE AND FALSE AND TRUE', false],
       ['FALSE AND TRUE AND TRUE', false],
       ['TRUE AND FALSE AND FALSE', false],
-      // ['FALSE AND TRUE AND FALSE', false],
+      ['FALSE AND TRUE AND FALSE', false],
       // ['FALSE AND FALSE AND TRUE', false],
       // ['FALSE AND FALSE AND FALSE', false],
     ])('knows %s is %o', (str: string, expected: boolean) => {
