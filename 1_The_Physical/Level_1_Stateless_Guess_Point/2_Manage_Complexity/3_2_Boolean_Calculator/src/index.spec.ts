@@ -42,9 +42,10 @@ describe('boolean calculator', () => {
       expect(result).toBeFalsy();
     });
 
-  //   it('knows FALSE AND TRUE is false', () => {
-
-  //   });
+    it('knows FALSE AND TRUE is false', () => {
+      const result = booleanCalculator.calculate('FALSE AND TRUE');
+      expect(result).toBeFalsy();
+    });
 
   //   it('knows FALSE AND FALSE is false', () => {
 
