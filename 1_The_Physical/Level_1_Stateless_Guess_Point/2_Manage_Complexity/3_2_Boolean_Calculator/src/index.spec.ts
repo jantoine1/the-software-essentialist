@@ -29,15 +29,12 @@ describe('boolean calculator', () => {
 
   describe('knows the AND operator', () => {
     it.each([
-      ['TRUE AND TRUE', true]
+      ['TRUE AND TRUE', true],
+      ['TRUE AND FALSE', false]
     ])('knows %s is %o', (str: string, expected: boolean) => {
       const result = booleanCalculator.calculate(str);
       expect(result).toBe(expected);
     });
-
-  //   it('knows TRUE AND FALSE is false', () => {
-
-  //   });
 
   //   it('knows FALSE AND TRUE is false', () => {
 
