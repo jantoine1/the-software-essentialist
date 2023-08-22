@@ -18,26 +18,20 @@ export class BooleanCalculator {
   calculatePart(str: string): string {
     while (str.includes('NOT')) {
       str = str.replace(/NOT (TRUE|FALSE)/, (_, p1,) => {
-        if (p1 === 'TRUE') {
-          return 'FALSE';
-        }
-
-        return 'TRUE';
+        return p1 === 'TRUE' ? 'FALSE' : 'TRUE';
       });
     }
 
-    if (str.includes('AND')) {
-      str = str
-        .split('AND')
-        .map(part => part.trim())
-        .includes('FALSE') ? 'FALSE' : 'TRUE';
+    while(str.includes('AND')) {
+      str = str.replace(/(TRUE|FALSE) AND (TRUE|FALSE)/, (_, p1, p2) => {
+        return [p1, p2].includes('FALSE') ? 'FALSE' : 'TRUE';
+      });
     }
 
-    if (str.includes('OR')) {
-      str = str
-        .split('OR')
-        .map(part => part.trim())
-        .includes('TRUE') ? 'TRUE' : 'FALSE';
+    while (str.includes('OR')) {
+      str = str.replace(/(TRUE|FALSE) OR (TRUE|FALSE)/, (_, p1, p2) => {
+        return [p1, p2].includes('TRUE') ? 'TRUE' : 'FALSE';
+      });
     }
 
     return str;

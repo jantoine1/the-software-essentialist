@@ -182,7 +182,7 @@ describe('boolean calculator', () => {
   describe('knows how to combine the NOT, AND and OR operators', () => {
     it.each([
       ['TRUE AND TRUE OR FALSE', true],
-      // ['TRUE OR TRUE AND FALSE', true],
+      ['TRUE OR TRUE AND FALSE', true],
       // ['TRUE AND TRUE OR NOT FALSE', true],
       // ['NOT TRUE OR TRUE AND FALSE', false],
     ])('knows that %s is %o', (str: string, expected: boolean) => {
