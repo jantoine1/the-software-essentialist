@@ -42,7 +42,7 @@ describe('boolean calculator', () => {
   describe('knows how to combine parenthesis and the NOT operator', () => {
     it.each([
       ['NOT (TRUE)', false],
-      // ['NOT (FALSE)', true],
+      ['NOT (FALSE)', true],
       ['(NOT TRUE)', false],
       ['(NOT FALSE)', true],
       // ['(NOT (TRUE))', false],
