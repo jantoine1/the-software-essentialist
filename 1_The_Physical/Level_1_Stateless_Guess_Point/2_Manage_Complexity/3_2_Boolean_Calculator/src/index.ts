@@ -3,14 +3,26 @@ export class BooleanCalculator {
     const strArray = str.split(/\s/);
     let result: boolean = true;
     let inverse: boolean = false;
+    let operator: string = 'AND';
 
     for(const chunk of strArray) {
       if (chunk === 'NOT') {
         inverse = !inverse;
       }
 
+      if (chunk === 'OR') {
+        operator = 'OR';
+      }
+
       if (chunk === 'FALSE') {
-        result = false;
+        if (operator === 'OR') {
+          result = result || false;
+
+          // Reset the operator.
+          operator = 'AND';
+        } else {
+          result = false;
+        }
 
         break;
       }

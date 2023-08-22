@@ -45,15 +45,12 @@ describe('boolean calculator', () => {
 
   describe('knows the OR operator', () => {
     it.each([
-      ['TRUE OR TRUE', true]
+      ['TRUE OR TRUE', true],
+      ['TRUE OR FALSE', true]
     ])('knows %s is true', (str: string, expected: boolean) => {
       const result = booleanCalculator.calculate(str);
       expect(result).toBe(expected);
     });
-
-  //   it('knows TRUE OR FALSE is true', () => {
-
-  //   });
 
   //   it('knows FALSE OR TRUE is true', () => {
 
