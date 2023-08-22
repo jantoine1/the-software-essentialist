@@ -23,7 +23,7 @@ export class BooleanCalculator {
       }
       else if (part === 'OR') {
         operator = 'OR';
-        continue;
+        value = this.calculateParts(parts);
       }
 
       if (part === 'FALSE') {
