@@ -194,7 +194,7 @@ describe('boolean calculator', () => {
   describe('knows how to combine parenthesis and the NOT, AND and OR operators', () => {
     it.each([
       ['TRUE AND (TRUE OR FALSE)', true],
-      // ['(TRUE OR TRUE) AND FALSE', false],
+      ['(TRUE OR TRUE) AND FALSE', false],
       // ['TRUE AND (TRUE OR NOT TRUE)', false],
       // ['(NOT FALSE OR TRUE) AND FALSE', false],
     ])('knows that %s is %o', (str: string, expected: boolean) => {
