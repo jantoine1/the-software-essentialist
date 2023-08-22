@@ -170,7 +170,7 @@ describe('boolean calculator', () => {
       ['(NOT TRUE OR TRUE)', true],
       ['(TRUE) OR NOT FALSE', true],
       ['NOT TRUE OR (NOT FALSE)', true],
-      // ['(NOT TRUE OR TRUE OR TRUE)', true],
+      ['(NOT TRUE OR TRUE OR TRUE)', true],
       // ['(TRUE OR NOT FALSE) OR TRUE', true],
       // ['FALSE OR (FALSE OR NOT TRUE)', false],
     ])('knows %s is %o', (str: string, expected: boolean) => {
