@@ -169,7 +169,7 @@ describe('boolean calculator', () => {
     it.each([
       ['(NOT TRUE OR TRUE)', true],
       ['(TRUE) OR NOT FALSE', true],
-      // ['NOT TRUE OR (NOT FALSE)', true],
+      ['NOT TRUE OR (NOT FALSE)', true],
       // ['(NOT TRUE OR TRUE OR TRUE)', true],
       // ['(TRUE OR NOT FALSE) OR TRUE', true],
       // ['FALSE OR (FALSE OR NOT TRUE)', false],
