@@ -128,7 +128,7 @@ describe('boolean calculator', () => {
       ['FALSE OR TRUE OR TRUE', true],
       ['TRUE OR FALSE OR FALSE', true],
       ['FALSE OR TRUE OR FALSE', true],
-      // ['FALSE OR FALSE OR TRUE', true],
+      ['FALSE OR FALSE OR TRUE', true],
       // ['FALSE OR FALSE OR FALSE', false],
     ])('knows %s is %o', (str: string, expected: boolean) => {
       const result = booleanCalculator.calculate(str);
