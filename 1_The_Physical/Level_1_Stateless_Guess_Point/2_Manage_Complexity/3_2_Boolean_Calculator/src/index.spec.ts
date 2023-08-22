@@ -61,15 +61,12 @@ describe('boolean calculator', () => {
   // 3. OR
   describe('knows how to combine operators respective of precedence', () => {
     it.each([
-      ['TRUE OR TRUE OR TRUE AND FALSE', true]
+      ['TRUE OR TRUE OR TRUE AND FALSE', true],
+      ['TRUE OR FALSE AND NOT FALSE', true]
     ])('knows that %s is %o', (str: string, expected: boolean) => {
       const result = booleanCalculator.calculate(str);
       expect(result).toBe(expected);
     });
-
-  //   it('knows that TRUE OR FALSE AND NOT FALSE is true', () => {
-
-  //   });
   });
 
   // describe('knows how to handle how parenthesis', () => {
