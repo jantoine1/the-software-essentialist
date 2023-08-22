@@ -47,9 +47,10 @@ describe('boolean calculator', () => {
       expect(result).toBeFalsy();
     });
 
-  //   it('knows FALSE AND FALSE is false', () => {
-
-  //   });
+    it('knows FALSE AND FALSE is false', () => {
+      const result = booleanCalculator.calculate('FALSE AND FALSE');
+      expect(result).toBeFalsy();
+    });
   });
 
   // describe('knows the OR operator', () => {
