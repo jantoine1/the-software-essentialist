@@ -28,6 +28,13 @@ export class BooleanCalculator {
       str = this.calculateAnd(str);
     }
 
+    if (str.includes('OR')) {
+      str = str
+        .split('OR')
+        .map(part => part.trim())
+        .includes('TRUE') ? 'TRUE' : 'FALSE';
+    }
+
     return str;
   }
 
