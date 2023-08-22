@@ -43,15 +43,12 @@ describe('boolean calculator', () => {
     it.each([
       ['TRUE OR TRUE', true],
       ['TRUE OR FALSE', true],
-      ['FALSE OR TRUE', true]
+      ['FALSE OR TRUE', true],
+      ['FALSE OR FALSE', false]
     ])('knows %s is %o', (str: string, expected: boolean) => {
       const result = booleanCalculator.calculate(str);
       expect(result).toBe(expected);
     });
-
-  //   it('knows FALSE OR FALSE is false', () => {
-
-  //   });
   });
 
   // // Operator precedence:
