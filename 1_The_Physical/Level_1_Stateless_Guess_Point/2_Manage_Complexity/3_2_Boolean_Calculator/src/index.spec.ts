@@ -55,7 +55,7 @@ describe('boolean calculator', () => {
 
   describe('knows the AND operator', () => {
     it.each([
-      // ['TRUE AND TRUE', true],
+      ['TRUE AND TRUE', true],
       ['TRUE AND FALSE', false],
       // ['FALSE AND TRUE', false],
       // ['FALSE AND FALSE', false],
