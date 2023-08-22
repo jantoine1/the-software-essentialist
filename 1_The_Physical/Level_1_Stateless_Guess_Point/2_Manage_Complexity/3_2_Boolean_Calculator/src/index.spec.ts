@@ -1,13 +1,24 @@
-describe('boolean calculator', () => {
-  // describe('knows boolean values', () => {
-  //   it('knows TRUE is true', () => {
+import { BooleanCalculator } from "./index";
 
-  //   });
+let booleanCalculator: BooleanCalculator;
+
+describe('boolean calculator', () => {
+  beforeEach(() => {
+    booleanCalculator = new BooleanCalculator();
+  })
+
+  describe('knows boolean values', () => {
+    it.each([
+      ['TRUE', true]
+    ])('knows %s is %o', (str: string, expected: boolean) => {
+      const result = booleanCalculator.calculate(str);
+      expect(result).toBe(expected);
+    });
 
   //   it('knows FALSE is false', () => {
 
   //   });
-  // });
+  });
 
   // describe('knows the NOT operator', () => {
   //   it('knows NOT TRUE is false', () => {
