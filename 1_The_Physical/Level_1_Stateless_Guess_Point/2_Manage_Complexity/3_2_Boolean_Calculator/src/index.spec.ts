@@ -43,10 +43,13 @@ describe('boolean calculator', () => {
     });
   });
 
-  // describe('knows the OR operator', () => {
-  //   it('knows TRUE OR TRUE is true', () => {
-
-  //   });
+  describe('knows the OR operator', () => {
+    it.each([
+      ['TRUE OR TRUE', true]
+    ])('knows %s is true', (str: string, expected: boolean) => {
+      const result = booleanCalculator.calculate(str);
+      expect(result).toBe(expected);
+    });
 
   //   it('knows TRUE OR FALSE is true', () => {
 
@@ -59,7 +62,7 @@ describe('boolean calculator', () => {
   //   it('knows FALSE OR FALSE is false', () => {
 
   //   });
-  // });
+  });
 
   // // Operator precedence:
   // // 1. NOT
