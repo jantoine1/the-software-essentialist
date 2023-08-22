@@ -136,19 +136,20 @@ describe('boolean calculator', () => {
     });
   });
 
-  // describe('knows how to combine parenthesis and the OR operator', () => {
-  //   it.each([
-  //     ['(TRUE OR TRUE)', true],
-  //     ['(TRUE) OR FALSE', true],
-  //     ['FALSE OR (TRUE)', true],
-  //     ['(TRUE OR TRUE OR TRUE)', true],
-  //     ['(TRUE OR TRUE) OR FALSE', true],
-  //     ['TRUE OR (FALSE OR FALSE)', true],
-  //     ['FALSE OR (FALSE) OR FALSE', false],
-  //   ])('knows %s is %o', (str: string, expected: boolean) => {
-
-  //   });
-  // });
+  describe('knows how to combine parenthesis and the OR operator', () => {
+    it.each([
+      ['(TRUE OR TRUE)', true],
+      // ['(TRUE) OR FALSE', true],
+      // ['FALSE OR (TRUE)', true],
+      // ['(TRUE OR TRUE OR TRUE)', true],
+      // ['(TRUE OR TRUE) OR FALSE', true],
+      // ['TRUE OR (FALSE OR FALSE)', true],
+      // ['FALSE OR (FALSE) OR FALSE', false],
+    ])('knows %s is %o', (str: string, expected: boolean) => {
+      const result = booleanCalculator.calculate(str);
+      expect(result).toBe(expected);
+    });
+  });
 
   // describe('knows how to combine the NOT and OR operators', () => {
   //   it.each([
