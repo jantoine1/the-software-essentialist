@@ -16,13 +16,15 @@ export class BooleanCalculator {
   }
 
   calculatePart(str: string): string {
-    str = str.replace(/NOT (TRUE|FALSE)/, (_, p1,) => {
-      if (p1 === 'TRUE') {
-        return 'FALSE';
-      }
+    while (str.includes('NOT')) {
+      str = str.replace(/NOT (TRUE|FALSE)/, (_, p1,) => {
+        if (p1 === 'TRUE') {
+          return 'FALSE';
+        }
 
-      return 'TRUE';
-    });
+        return 'TRUE';
+      });
+    }
 
     if (str.includes('AND')) {
       str = str
