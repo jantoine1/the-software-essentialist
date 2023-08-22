@@ -32,7 +32,7 @@ describe('boolean calculator', () => {
   describe('knows the NOT operator', () => {
     it.each([
       ['NOT TRUE', false],
-      // ['NOT FALSE', true],
+      ['NOT FALSE', true],
     ])('knows %s is %o', (str: string, expected: boolean) => {
       const result = booleanCalculator.calculate(str);
       expect(result).toBe(expected);
