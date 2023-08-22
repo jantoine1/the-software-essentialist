@@ -9,15 +9,12 @@ describe('boolean calculator', () => {
 
   describe('knows boolean values', () => {
     it.each([
-      ['TRUE', true]
+      ['TRUE', true],
+      ['FALSE', false]
     ])('knows %s is %o', (str: string, expected: boolean) => {
       const result = booleanCalculator.calculate(str);
       expect(result).toBe(expected);
     });
-
-  //   it('knows FALSE is false', () => {
-
-  //   });
   });
 
   // describe('knows the NOT operator', () => {
