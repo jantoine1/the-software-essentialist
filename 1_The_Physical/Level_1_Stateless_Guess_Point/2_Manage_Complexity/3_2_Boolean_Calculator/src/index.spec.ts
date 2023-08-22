@@ -123,7 +123,7 @@ describe('boolean calculator', () => {
       ['FALSE OR TRUE', true],
       ['FALSE OR FALSE', false],
       ['TRUE OR TRUE OR TRUE', true],
-      // ['TRUE OR TRUE OR FALSE', true],
+      ['TRUE OR TRUE OR FALSE', true],
       // ['TRUE OR FALSE OR TRUE', true],
       // ['FALSE OR TRUE OR TRUE', true],
       // ['TRUE OR FALSE OR FALSE', true],
