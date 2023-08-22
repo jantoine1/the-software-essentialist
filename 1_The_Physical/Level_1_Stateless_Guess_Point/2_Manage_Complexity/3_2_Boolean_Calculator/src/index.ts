@@ -25,7 +25,10 @@ export class BooleanCalculator {
     });
 
     if (str.includes('AND')) {
-      str = this.calculateAnd(str);
+      str = str
+        .split('AND')
+        .map(part => part.trim())
+        .includes('FALSE') ? 'FALSE' : 'TRUE';
     }
 
     if (str.includes('OR')) {
@@ -36,11 +39,5 @@ export class BooleanCalculator {
     }
 
     return str;
-  }
-
-  calculateAnd(str: string): string {
-    const parts = str.split('AND').map(part => part.trim());
-
-    return parts.includes('FALSE') ? 'FALSE' : 'TRUE';
   }
 }
