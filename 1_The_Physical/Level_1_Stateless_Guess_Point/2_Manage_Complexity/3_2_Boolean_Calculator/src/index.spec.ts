@@ -19,7 +19,7 @@ describe('boolean calculator', () => {
 
   describe('knows parenthesis', () => {
     it.each([
-      // ['(TRUE)', true],
+      ['(TRUE)', true],
       ['(FALSE)', false],
       // ['((TRUE))', true],
       // ['((FALSE))', false],
