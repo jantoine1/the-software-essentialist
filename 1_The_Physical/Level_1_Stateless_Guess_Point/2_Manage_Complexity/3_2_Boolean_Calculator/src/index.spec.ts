@@ -22,7 +22,7 @@ describe('boolean calculator', () => {
       ['(TRUE)', true],
       ['(FALSE)', false],
       // ['((TRUE))', true],
-      // ['((FALSE))', false],
+      ['((FALSE))', false],
     ])('knows that %s is %o', (str: string, expected: boolean) => {
       const result = booleanCalculator.calculate(str);
       expect(result).toBe(expected);

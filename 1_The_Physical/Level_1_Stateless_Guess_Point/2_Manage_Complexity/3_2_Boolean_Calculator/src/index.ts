@@ -1,6 +1,6 @@
 export class BooleanCalculator {
   calculate(str: string): boolean {
-    if (str.includes('(')) {
+    while (str.includes('(')) {
       str = str.slice(1, -1);
     }
 
