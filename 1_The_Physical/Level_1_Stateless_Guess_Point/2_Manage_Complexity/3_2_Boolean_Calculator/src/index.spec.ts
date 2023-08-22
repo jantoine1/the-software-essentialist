@@ -55,19 +55,22 @@ describe('boolean calculator', () => {
     });
   });
 
-  // // Operator precedence:
-  // // 1. NOT
-  // // 2. AND
-  // // 3. OR
-  // describe('knows how to combine operators respective of precedence', () => {
-  //   it('knows that TRUE OR TRUE OR TRUE AND FALSE is true', () => {
-
-  //   });
+  // Operator precedence:
+  // 1. NOT
+  // 2. AND
+  // 3. OR
+  describe('knows how to combine operators respective of precedence', () => {
+    it.each([
+      ['TRUE OR TRUE OR TRUE AND FALSE', true]
+    ])('knows that %s is %o', (str: string, expected: boolean) => {
+      const result = booleanCalculator.calculate(str);
+      expect(result).toBe(expected);
+    });
 
   //   it('knows that TRUE OR FALSE AND NOT FALSE is true', () => {
 
   //   });
-  // });
+  });
 
   // describe('knows how to handle how parenthesis', () => {
   //   it('knows that (TRUE OR TRUE OR TRUE) AND FALSE is false', () => {

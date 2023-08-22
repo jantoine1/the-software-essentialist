@@ -1,10 +1,10 @@
 export class BooleanCalculator {
   calculate(str: string): boolean {
-    console.log(str);
     const strArray = str.split(/\s/);
     let result: boolean = true;
     let inverse: boolean = false;
     let operator: string = 'AND';
+    let previousOperator: string = 'AND';
     let value: boolean = true;
 
     for(const chunk of strArray) {
@@ -19,6 +19,10 @@ export class BooleanCalculator {
         continue;
       }
 
+      if (chunk === 'AND') {
+        continue;
+      }
+
       if (chunk === 'FALSE') {
         value = false;
       }
@@ -30,10 +34,13 @@ export class BooleanCalculator {
       if (operator === 'OR') {
         result = result || value;
       } else {
-        result = result && value;
+        if (previousOperator !== 'OR') {
+          result = result && value;
+        }
       }
 
-      // Reset the operator.
+      // Reset defaults.
+      previousOperator = operator;
       inverse = false;
       operator = 'AND';
       value = true;
