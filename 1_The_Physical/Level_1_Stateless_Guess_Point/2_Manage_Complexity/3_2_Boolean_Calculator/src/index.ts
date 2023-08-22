@@ -1,7 +1,7 @@
 export class BooleanCalculator {
   calculate(str: string): boolean {
     while (str.includes('(')) {
-      str = str.replace(/\(([^\(]+?)\)/, ((match, p1, offset, string, groups) => {
+      str = str.replace(/\(([^\(]+?)\)/, ((_, p1) => {
         return this.calculatePart(p1);
       }));
     }
@@ -16,14 +16,16 @@ export class BooleanCalculator {
   }
 
   calculatePart(str: string): string {
+    str = str.replace(/NOT (TRUE|FALSE)/, (_, p1,) => {
+      if (p1 === 'TRUE') {
+        return 'FALSE';
+      }
+
+      return 'TRUE';
+    });
+
     if (str.includes('AND')) {
       str = this.calculateAnd(str);
-    }
-
-    if (str.startsWith('NOT')) {
-      if (str.slice(4) === 'TRUE') {
-        str = 'FALSE';
-      }
     }
 
     return str;

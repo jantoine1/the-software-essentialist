@@ -88,18 +88,19 @@ describe('boolean calculator', () => {
     });
   });
 
-  // describe('knows how to combine the NOT and AND operators', () => {
-  //   it.each([
-  //     ['NOT TRUE AND TRUE', false],
-  //     ['TRUE AND NOT FALSE', true],
-  //     ['NOT TRUE AND NOT FALSE', false],
-  //     ['NOT TRUE AND TRUE AND TRUE', false],
-  //     ['TRUE AND NOT FALSE AND TRUE', true],
-  //     ['FALSE AND TRUE AND NOT FALSE', false],
-  //   ])('knows %s is %o', (str: string, expected: boolean) => {
-
-  //   });
-  // });
+  describe('knows how to combine the NOT and AND operators', () => {
+    it.each([
+      ['NOT TRUE AND TRUE', false],
+      // ['TRUE AND NOT FALSE', true],
+      // ['NOT TRUE AND NOT FALSE', false],
+      // ['NOT TRUE AND TRUE AND TRUE', false],
+      // ['TRUE AND NOT FALSE AND TRUE', true],
+      // ['FALSE AND TRUE AND NOT FALSE', false],
+    ])('knows %s is %o', (str: string, expected: boolean) => {
+      const result = booleanCalculator.calculate(str);
+      expect(result).toBe(expected);
+    });
+  });
 
   // describe('knows how to combine parenthesis and the NOT and AND operators', () => {
   //   it.each([
