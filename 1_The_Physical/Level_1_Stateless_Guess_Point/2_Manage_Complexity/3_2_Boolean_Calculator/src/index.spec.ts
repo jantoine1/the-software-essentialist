@@ -29,14 +29,15 @@ describe('boolean calculator', () => {
     });
   });
 
-  // describe('knows the NOT operator', () => {
-  //   it.each([
-  //     ['NOT TRUE', false],
-  //     ['NOT FALSE', true],
-  //   ])('knows %s is %o', (str: string, expected: boolean) => {
-
-  //   });
-  // });
+  describe('knows the NOT operator', () => {
+    it.each([
+      ['NOT TRUE', false],
+      // ['NOT FALSE', true],
+    ])('knows %s is %o', (str: string, expected: boolean) => {
+      const result = booleanCalculator.calculate(str);
+      expect(result).toBe(expected);
+    });
+  });
 
   // describe('knows how to combine parenthesis and the NOT operator', () => {
   //   it.each([
